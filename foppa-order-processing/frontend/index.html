@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gemini Order Capture</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel input-panel">
+        <div class="panel-header">
+          <div>
+            <h1>Order Review</h1>
+            <p id="status">Checking backend...</p>
+          </div>
+          <button id="sampleButton" type="button">Load sample</button>
+        </div>
+
+        <form id="extractForm">
+          <label>
+            Customer
+            <input name="customer_code" type="text" value="A0233" placeholder="e.g. A0233" list="customer_suggestions" />
+            <datalist id="customer_suggestions">
+              <option value="A0233"></option>
+              <option value="B0244"></option>
+              <option value="B0433"></option>
+              <option value="B0491"></option>
+              <option value="B0578"></option>
+              <option value="B0592"></option>
+              <option value="B0622"></option>
+              <option value="C0074"></option>
+              <option value="E0131"></option>
+              <option value="F0245"></option>
+              <option value="F0459"></option>
+              <option value="G0449"></option>
+              <option value="H0074"></option>
+            </datalist>
+          </label>
+
+          <!-- ── Confidence threshold slider (Student Exercise 4) ── -->
+          <label>
+            Confidence threshold: <span id="thresholdValue" class="threshold-badge">85</span>
+            <div class="threshold-row">
+              <span class="threshold-label">50</span>
+              <input
+                type="range"
+                id="thresholdSlider"
+                name="threshold"
+                min="50"
+                max="100"
+                value="85"
+                step="1"
+              />
+              <span class="threshold-label">100</span>
+            </div>
+            <p class="field-note">
+              Items scoring below this threshold trigger a full-catalog fallback search.
+            </p>
+          </label>
+
+          <label>
+            Order text
+            <textarea
+              name="text"
+              rows="8"
+              placeholder="Paste OCR text or a quick manual order here"
+            ></textarea>
+          </label>
+
+          <label>
+            File
+            <input name="file" type="file" accept="image/*,application/pdf" />
+          </label>
+          <p class="field-note">Audio input is an optional extension — see project brief for details.</p>
+
+          <div class="actions">
+            <button type="submit" class="primary">Extract order</button>
+            <button id="clearButton" type="button">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel output-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Candidate JSON</h2>
+            <p>Review before finalizing.</p>
+          </div>
+          <button id="feedbackButton" type="button" disabled>Send feedback</button>
+        </div>
+
+        <div id="summary" class="summary empty">No extraction yet.</div>
+        <div id="items"></div>
+        <pre id="jsonOutput">{}</pre>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
