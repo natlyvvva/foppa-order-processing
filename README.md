@@ -1,6 +1,6 @@
 # Автоматизация обработки заказов для Foppa GmbH
 
-Курсовой проект по NLP & Web Analytics (M2, Free University of Bozen-Bolzano, 2025/26).
+Проект по дисциплине NLP & Web Analytics, Free University of Bozen-Bolzano, 2025/26.
 
 📄 [Отчёт по проекту (PDF)](docs/NLP_project_for_Foppa.pdf) · 📊 [Презентация (PPTX)](docs/project_nlp.pptx)
 
