@@ -19,7 +19,7 @@ Foppa GmbH — оптовый поставщик продуктов в Южно�
 4. **Обратная связь.** Подтверждённые заказы сохраняются в SQLite — основа для будущего обучения матчера.
 
 ## Стек
-FastAPI, Pydantic, Google Gemini API (`google-genai`), rapidfuzz, pandas + openpyxl, SQLite, pytest, ванильный JS + HTML/CSS для интерфейса.
+FastAPI, Pydantic, Google Gemini API (`google-genai`), rapidfuzz, pandas + openpyxl, pytest, ванильный JS + HTML/CSS для интерфейса.
 
 ## Структура
 ```
